@@ -11,7 +11,7 @@ public class Clinica {
 
         this.nombre=    nombre;
         this.nit=        nit;
-        listMascotas = new Mascota[15];
+        listMascotas = new Mascota[3];
     }
 //5 CRUD (plantilla)
 
