@@ -2,32 +2,52 @@ package co.edu.uniquindio.poo;
 
 public class Consulta {
     private double valorBase;
-    private double incrementoEspecie;
-    private double incrementoEdad;
-    private int id;
+    private final String id;
 
-    public Consulta(double valorBase, double incrementoEspecie, double incrementoEdad, int id) {
+    private final Mascota mascota;
+    private final Propietario propietario;
 
+    public Consulta(double valorBase, String id, Mascota mascota, Propietario propietario) {
         this.valorBase= valorBase;
-        this.incrementoEspecie = incrementoEspecie;
-        this.incrementoEdad = incrementoEdad;
         this.id = id;
+        this.mascota = mascota;
+        this.propietario = propietario;
     }
 
-    public double getValorBase(){return valorBase;}
     public void setValorBase(double valorBase){this.valorBase=valorBase;}
 
-    public double getIncrementoEspecie(){return incrementoEspecie;}
-    public void setIncrementoEspecie(double incrementoEspecie){this.incrementoEspecie=incrementoEspecie;}
+    public String getId(){return id;}
 
-    public double getIncrementoEdad(){return incrementoEdad;}
-    public void setIncrementoEdad(double incrementoEdad){this.incrementoEdad=incrementoEdad;}
-
-    public int getId(){return id;}
-    public void setId(int id){this.id=id;}
-
-//funcionalidad del requerimiento
+    //condiciones libres
     public double calcularCosto() {
-        return valorBase + incrementoEspecie + incrementoEdad;
+        double total = valorBase;
+
+        //1 si ea un caballo
+        if(mascota.getEspecie().equalsIgnoreCase("caballo")){
+            total += 52500;
+        }
+
+        //si la mascota tiene >6 de edad
+        if(mascota.getEdad() > 6){
+            total += 21500;
+        }
+
+      // si es perro y >10 años
+        if(mascota.getEspecie().equalsIgnoreCase("perro") && mascota.getEdad() > 10){
+            total += 32500;
+        }
+
+        return total;
     }
+
+    @Override
+    public String toString(){
+        return "Consulta ID: "+id+
+                "\nValor Base: " +valorBase+
+                "\nMascota: " +mascota.getNombre()+
+                "\nPropietario: " +propietario.getNombrePropietario()+
+                "\nValor Final: " +calcularCosto();
+    }
+
+
 }
