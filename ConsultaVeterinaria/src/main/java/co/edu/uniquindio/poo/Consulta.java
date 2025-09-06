@@ -50,4 +50,9 @@ public class Consulta {
     }
 
 
+    public void setIncrementoEspecie(double nuevoIncrementoEspecie) {
+    }
+
+    public void setIncrementoEdad(double nuevoIncrementoEdad) {
+    }
 }

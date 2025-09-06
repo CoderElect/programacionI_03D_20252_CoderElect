@@ -52,7 +52,8 @@ public class Clinica {
     }
 
     //metodo update
-    public boolean actualizarMascota(String nombre, String especie, String raza, int edad, String numId, String namePropietario, String contactoPropietario){
+    public boolean actualizarMascota(String nombre, String especie, String raza, int edad, String numId,
+                                     String namePropietario, String contactoPropietario){
 
         int indexMascota=obtenerIndexMascotas(numId);
         if(indexMascota == -1) return false;

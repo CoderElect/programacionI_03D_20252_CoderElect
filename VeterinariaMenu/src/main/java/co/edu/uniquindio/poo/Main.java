@@ -6,7 +6,7 @@ public class Main {
         Clinica newClinica = new Clinica("PETS", "777");
         int opcion =0;
 //definirlo con int o string
-        while (opcion != 5) {
+        while (opcion !=5) {
             opcion = Integer.parseInt(JOptionPane.showInputDialog(
                     "MENÚ VETERINARIA\n" +
                         "1. Agregar Mascota\n" +
@@ -23,10 +23,10 @@ public class Main {
                     String raza = JOptionPane.showInputDialog("Raza:");
                     int edad = Integer.parseInt(JOptionPane.showInputDialog("Edad:"));
                     String idMascota = JOptionPane.showInputDialog("ID de la mascota:");
-                    String propietarioNombre = JOptionPane.showInputDialog("Nombre del propietario:");
-                    String propietarioContacto = JOptionPane.showInputDialog("Contacto del propietario:");
+                    String namePropietario = JOptionPane.showInputDialog("Nombre del propietario:");
+                    String contactoPropietario = JOptionPane.showInputDialog("Contacto del propietario:");
 
-                    boolean agregada = newClinica.agregarMascota(nombre, especie, raza, edad, idMascota, propietarioNombre, propietarioContacto);
+                    boolean agregada = newClinica.agregarMascota(nombre, especie, raza, edad, idMascota, namePropietario, contactoPropietario);
 
                     if (agregada) {
                         JOptionPane.showMessageDialog(null, "Mascota agregada correctamente");

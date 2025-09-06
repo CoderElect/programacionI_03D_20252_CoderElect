@@ -26,7 +26,7 @@ public class Clinica {
         return -1;
     }
 
-    public boolean agregarMascota(@org.jetbrains.annotations.NotNull Mascota mascota) {
+    public boolean agregarMascota(Mascota mascota) {
         if (obtenerIndexMascota(mascota.getNumId()) != -1) return false;
         for (int i=0; i<listMascotas.length; i++) {
             if (listMascotas[i] == null) {
