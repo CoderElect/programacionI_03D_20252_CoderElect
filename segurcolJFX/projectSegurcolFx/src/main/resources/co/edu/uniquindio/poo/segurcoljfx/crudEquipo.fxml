@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.uniquindio.poo.segurcoljfx.viewController.EquipoViewController"
+            prefWidth="800" prefHeight="600"
+            style="-fx-background-color: #f8f9fa;">
+
+    <VBox spacing="15" alignment="TOP_CENTER" prefWidth="800" prefHeight="600">
+        <padding>
+            <Insets top="15" right="20" bottom="15" left="20"/>
+        </padding>
+
+        <!-- 🔹 Título -->
+        <Label text="Gestión de Equipos"
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+
+        <HBox spacing="10" alignment="CENTER">
+            <VBox spacing="5">
+                <!-- bcodigo -->
+                <Label text="Código:"/>
+                <TextField fx:id="txtCodigo" promptText="Ej: EQ001"/>
+            </VBox>
+            <!-- valor de reposicion-->
+            <VBox spacing="5">
+                <Label text="Valor Reposición:"/>
+                <TextField fx:id="txtValor" promptText="Ej: 1500000"/>
+            </VBox>
+            <!-- seleccion de estado -->
+            <VBox spacing="5">
+                <Label text="Estado:"/>
+                <ComboBox fx:id="cmbEstado" promptText="Seleccione estado"/>
+            </VBox>
+            <!-- tipo-->
+            <VBox spacing="5">
+                <Label text="Tipo:"/>
+                <ComboBox fx:id="cmbTipo" promptText="Seleccione tipo"/>
+            </VBox>
+        </HBox>
+
+
+        <TableView fx:id="tblEquipos" prefHeight="350" prefWidth="760">
+            <columns>
+                <TableColumn fx:id="colCodigo" text="Código" prefWidth="100"/>
+                <TableColumn fx:id="colValorReposicion" text="Valor Reposición" prefWidth="120"/>
+                <TableColumn fx:id="colEstadoEquipo" text="Estado" prefWidth="100"/>
+                <TableColumn fx:id="colTipoEquipo" text="Tipo" prefWidth="100"/>
+                <TableColumn fx:id="colServicio" text="Servicio Asignado" prefWidth="160"/>
+                <TableColumn fx:id="colEmpleado" text="Empleado Asignado" prefWidth="160"/>
+            </columns>
+        </TableView>
+
+        <!-- botones add colores -->
+        <HBox spacing="15" alignment="CENTER">
+            <Button text="Agregar" onAction="#onAgregar"
+                    style="-fx-background-color: #2ecc71; -fx-text-fill: white;"/>
+            <Button text="Eliminar" onAction="#onEliminar"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+            <Button text="Asignar Servicio" onAction="#onAsignarServicio"
+                    style="-fx-background-color: #9b59b6; -fx-text-fill: white;"/>
+            <Button text="Asignar Empleado" onAction="#onAsignarEmpleado"
+                    style="-fx-background-color: #1abc9c; -fx-text-fill: white;"/>
+        </HBox>
+
+        <!-- asignar y añadir a tabla (corregir)-->
+        <HBox spacing="40" alignment="CENTER">
+            <VBox spacing="5">
+                <Label text="Servicio:"/>
+                <ComboBox fx:id="cmbServicio" promptText="Seleccione servicio"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Empleado:"/>
+                <ComboBox fx:id="cmbEmpleado" promptText="Seleccione empleado"/>
+            </VBox>
+        </HBox>
+    </VBox>
+</AnchorPane>

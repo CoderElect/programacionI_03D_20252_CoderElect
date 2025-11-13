@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.uniquindio.poo.segurcoljfx.viewController.EmpleadoViewController"
+            prefWidth="500" prefHeight="300">
+
+    <VBox alignment="CENTER" spacing="20">
+        <padding>
+            <Insets top="20" bottom="20" left="20" right="20"/>
+        </padding>
+
+        <Label text="Gestión de Empleados" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+        <Label text="Seleccione el tipo de empleado que desea gestionar:"/>
+
+        <HBox spacing="15" alignment="CENTER">
+            <!-- botones add colores -->
+            <Button text="Vigilantes" onAction="#abrirCrudVigilante" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+            <Button text="Supervisores" onAction="#abrirCrudSupervisor" style="-fx-background-color: #9b59b6; -fx-text-fill: white;"/>
+            <Button text="Operadores de Monitoreo" onAction="#abrirCrudOperador" style="-fx-background-color: #1abc9c; -fx-text-fill: white;"/>
+        </HBox>
+        <Separator prefWidth="400"/> <!--linea divisoria-->
+        <Label text="Aquí podrá acceder a los formularios de gestión de cada tipo de Empleado."
+               style="-fx-font-size: 14px; -fx-text-fill: #555;"/>
+    </VBox>
+
+</AnchorPane>

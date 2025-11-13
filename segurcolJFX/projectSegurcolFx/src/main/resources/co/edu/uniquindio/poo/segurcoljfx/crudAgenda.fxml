@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.uniquindio.poo.segurcoljfx.viewController.AgendaViewController"
+            prefWidth="800" prefHeight="500">
+
+    <VBox spacing="15">
+        <padding>
+            <Insets top="15" right="15" bottom="15" left="15"/>
+        </padding>
+
+        <Label text="Gestión de Agenda" style="-fx-font-size:18; -fx-font-weight:bold;"/>
+
+        <HBox spacing="10">
+            <VBox spacing="5">
+                <!-- fecha (vista calendario)-->
+                <Label text="Fecha"/>
+                <DatePicker fx:id="dpFecha"/>
+            </VBox>
+            <VBox spacing="5">
+                <!-- descripcion -->
+                <Label text="Descripción"/>
+                <TextField fx:id="txtDescripcion" promptText="Ej. Revisión cámaras"/>
+            </VBox>
+            <VBox spacing="5">
+                <!-- escoger empleado -->
+                <Label text="Empleado"/>
+                <ComboBox fx:id="cmbEmpleado" prefWidth="150"/>
+            </VBox>
+            <VBox spacing="5">
+                <!-- escoger servicio -->
+                <Label text="Servicio"/>
+                <ComboBox fx:id="cmbServicio" prefWidth="150"/>
+            </VBox>
+        </HBox>
+
+        <!-- botones add colores -->
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="btnAgregar" text="Agregar" onAction="#onAgregar" style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+            <Button fx:id="btnEliminar" text="Eliminar" onAction="#onEliminar" style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+            <Button fx:id="btnLimpiar" text="Limpiar" onAction="#onLimpiar" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+        </HBox>
+
+        <TableView fx:id="tblAgenda" prefHeight="350">
+            <columns>
+                <TableColumn fx:id="colFecha" text="Fecha" prefWidth="120"/>
+                <TableColumn fx:id="colDescripcion" text="Descripción" prefWidth="250"/>
+                <TableColumn fx:id="colEmpleado" text="Empleado" prefWidth="200"/>
+                <TableColumn fx:id="colServicio" text="Servicio" prefWidth="200"/>
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>

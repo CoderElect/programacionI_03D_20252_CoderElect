@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.uniquindio.poo.segurcoljfx.viewController.PatrullajeMovilViewController"
+            prefWidth="800" prefHeight="600">
+
+    <VBox spacing="15" alignment="TOP_CENTER" AnchorPane.topAnchor="10" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+        <padding>
+            <Insets top="10" bottom="10" left="20" right="20"/>
+        </padding>
+
+
+        <Label text="Gestión de Patrullaje Móvil" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+        <GridPane hgap="15" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" minWidth="150"/>
+                <ColumnConstraints halignment="LEFT" minWidth="250"/>
+            </columnConstraints>
+
+            <!-- codigo -->
+            <Label text="Código Contrato:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtCodigoContrato" promptText="Ej: PM001" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <!--cliente -->
+            <Label text="Cliente:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtCliente" promptText="Nombre del cliente" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <!-- tarifa -->
+            <Label text="Tarifa Mensual:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtTarifa" promptText="Ej: 2500000" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <!-- estado -->
+            <Label text="Estado:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cmbEstado" prefWidth="250" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <!-- ruta-->
+            <Label text="Ruta:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtRuta" promptText="Número de ruta" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+            <!-- Km -->
+            <Label text="Kilómetros Recorridos:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtKilometros" promptText="Ej: 30.5" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <!-- botones add colores -->
+        <HBox spacing="15" alignment="CENTER">
+            <Button fx:id="btnAgregar" text="Agregar" onAction="#onAgregar" style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+            <Button fx:id="btnActualizar" text="Actualizar" onAction="#onActualizar" style="-fx-background-color: #f1c40f; -fx-text-fill: white;"/>
+            <Button fx:id="btnEliminar" text="Eliminar" onAction="#onEliminar" style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+            <Button fx:id="btnLimpiar" text="Limpiar" onAction="#onLimpiar" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+        </HBox>
+
+        <TableView fx:id="tblPatrullaje" prefHeight="350" prefWidth="700">
+            <columns>
+                <TableColumn fx:id="colCodigo" text="Código" prefWidth="120"/>
+                <TableColumn fx:id="colCliente" text="Cliente" prefWidth="150"/>
+                <TableColumn fx:id="colTarifa" text="Tarifa Mensual" prefWidth="130"/>
+                <TableColumn fx:id="colEstado" text="Estado" prefWidth="100"/>
+                <TableColumn fx:id="colRuta" text="Ruta" prefWidth="80"/>
+                <TableColumn fx:id="colKilometros" text="Kilómetros" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>

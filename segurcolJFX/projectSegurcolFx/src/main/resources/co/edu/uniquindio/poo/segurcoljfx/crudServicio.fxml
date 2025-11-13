@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.uniquindio.poo.segurcoljfx.viewController.ServicioViewController"
+            prefWidth="600.0" prefHeight="400.0">
+
+    <VBox spacing="20" alignment="CENTER">
+        <padding>
+            <Insets top="30" right="30" bottom="30" left="30"/>
+        </padding>
+
+        <Label text="Gestión de Servicios" style="-fx-font-size: 26px; -fx-font-weight: bold;"/>
+
+        <Label text="Selecciona el tipo de servicio que deseas gestionar:"
+               style="-fx-font-size: 16px;"/>
+
+        <HBox spacing="40" alignment="CENTER">
+            <!-- CRUD de custodiaFija-->
+            <Button fx:id="btnCustodiaFija" text="Custodia Fija"
+                    onAction="#abrirCustodiaFija"
+                    style="-fx-font-size: 16px; -fx-background-color: #235224; -fx-text-fill: white;"/>
+            <!-- CRUD de patrullajeMovil-->
+            <Button fx:id="btnPatrullajeMovil" text="Patrullaje Móvil"
+                    onAction="#abrirPatrullajeMovil"
+                    style="-fx-font-size: 16px; -fx-background-color: #342457; -fx-text-fill: white;"/>
+        </HBox>
+
+        <Separator prefWidth="400"/> <!--linea divisoria-->
+
+        <Label text="Aquí podrá acceder a los formularios de gestión de cada tipo de servicio."
+               style="-fx-font-size: 14px; -fx-text-fill: #555;"/>
+    </VBox>
+</AnchorPane>

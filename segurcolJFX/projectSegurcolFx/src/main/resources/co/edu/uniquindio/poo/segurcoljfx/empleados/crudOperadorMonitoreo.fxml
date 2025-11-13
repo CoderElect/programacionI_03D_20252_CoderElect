@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.uniquindio.poo.segurcoljfx.viewController.OperadorMonitoreoViewController"
+            prefWidth="750" prefHeight="550">
+
+    <VBox spacing="10" alignment="TOP_CENTER" prefWidth="750" prefHeight="550">
+        <padding>
+            <Insets top="15" right="20" bottom="15" left="20"/>
+        </padding>
+        <!-- ventana de operadores -->
+        <Label text="Gestión de Operadores de Monitoreo" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+        <!-- campos del form-->
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" minWidth="120"/>
+                <ColumnConstraints minWidth="200" hgrow="ALWAYS"/>
+            </columnConstraints>
+            <!-- nombre -->
+            <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtNombre" promptText="Ingrese el nombre" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <!-- docu -->
+            <Label text="Documento:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtDocumento" promptText="Ingrese el documento" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <!-- turno-->
+            <Label text="Turno:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cmbTurno" prefWidth="200" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <!-- salarioBase-->
+            <Label text="Salario Base:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtSalario" promptText="Ej: 1400000" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            <!-- zonas-->
+            <Label text="Zonas de Monitoreo:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <Spinner fx:id="spnZonas" editable="true" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        </GridPane>
+        <!-- botones add colores-->
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="btnAgregar" text="Agregar" onAction="#onAgregar" style="-fx-background-color: #2ecc71; -fx-text-fill: white;"/>
+            <Button fx:id="btnActualizar" text="Actualizar" onAction="#onActualizar" style="-fx-background-color: #f1c40f; -fx-text-fill: white;"/>
+            <Button fx:id="btnEliminar" text="Eliminar" onAction="#onEliminar" style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+            <Button fx:id="btnLimpiar" text="Limpiar" onAction="#onLimpiar" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+        </HBox>
+        <!--vista en tabla-->
+        <TableView fx:id="tblOperadores" prefHeight="250">
+            <columns>
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="140"/>
+                <TableColumn fx:id="colDocumento" text="Documento" prefWidth="140"/>
+                <TableColumn fx:id="colTurno" text="Turno" prefWidth="100"/>
+                <TableColumn fx:id="colSalario" text="Salario Base" prefWidth="120"/>
+                <TableColumn fx:id="colZonas" text="Zonas Monitoreo" prefWidth="140"/>
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>
