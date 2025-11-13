@@ -49,7 +49,7 @@ El formulario contiene campos básicos como:
 - **Servicio asignado**
 - **Estado (Activo / Inactivo)**
 
-#### 🔘 Botones principales:
+####  Botones principales:
 
 | Botón                  | Acción |
 |------------------------|--------|
@@ -112,7 +112,6 @@ Este módulo permite registrar eventos o situaciones diarias:
 
 | Elemento | Descripción |
 |-----------|-------------|
-| **Arquitectura** | MVC (Modelo – Vista – Controlador) |
 | **Archivos FXML** | Se encuentran en `src/main/resources/co/edu/uniquindio/poo/segurcoljfx/view/` |
 | **Controladores** | En el paquete `viewController` |
 | **Modelo de datos** | En el paquete `model` |
