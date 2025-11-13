@@ -117,4 +117,15 @@ Este módulo permite registrar eventos o situaciones diarias:
 | **Modelo de datos** | En el paquete `model` |
 
 ---
-## Thank you 
+
+##  Conflictos
+| Descripcion                              | Solucion                                  |
+|------------------------------------------|-------------------------------------------|
+| Copiar y pegar la carpeta a otro ruta    | Hacer refactor                            |
+| No hallar el elemento `Anchor Pane`      | Agregar rutas correctas                   |
+| No reconocía `App.Java` ni controladores | editar el module-info                     |
+| Fallo en el actionEvent                  | agregar `import javafx.event.actionEvent` |
+| URI is not registered| ignorar advertencia y ejecutar            |
+
+---
+## Thank youu
